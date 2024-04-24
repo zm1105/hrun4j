@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>httprunner4j</artifactId>
+        <artifactId>hrun4j</artifactId>
         <groupId>vip.lematech</groupId>
-        <version>0.0.1</version>
+        <version>1.0.2</version>
     </parent>
     <groupId>vip.lematech</groupId>
     <artifactId>hrun4j-test-demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.2</version>
     <name>hrun4j-test-demo</name>
 
     <properties>
@@ -24,8 +24,30 @@
         <dependency>
             <groupId>vip.lematech</groupId>
             <artifactId>hrun4j-core</artifactId>
-            <version>0.0.1</version>
+            <version>1.0.2</version>
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <!--jacoco依赖-->
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <configuration>
+                    <destFile>target/coverage-reports/jacoco.exec</destFile>
+                    <dataFile>target/coverage-reports/jacoco.exec</dataFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

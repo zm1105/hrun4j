@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>httprunner4j</artifactId>
+        <artifactId>hrun4j</artifactId>
         <groupId>vip.lematech</groupId>
-        <version>0.0.1</version>
+        <version>1.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>hrun4j-cli</artifactId>
@@ -36,6 +36,12 @@
             <groupId>com.sangupta</groupId>
             <artifactId>jerry-core</artifactId>
             <version>1.3.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -47,11 +53,17 @@
             <groupId>io.swagger.parser.v3</groupId>
             <artifactId>swagger-parser</artifactId>
             <version>2.0.24</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>vip.lematech</groupId>
             <artifactId>hrun4j-core</artifactId>
-            <version>0.0.1</version>
+            <version>1.0.2</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
